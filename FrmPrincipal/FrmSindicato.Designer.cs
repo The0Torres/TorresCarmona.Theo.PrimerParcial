@@ -1,6 +1,6 @@
 ﻿namespace FrmPrincipal
 {
-    partial class Form1
+    partial class FrmSindicato
     {
         /// <summary>
         ///  Required designer variable.

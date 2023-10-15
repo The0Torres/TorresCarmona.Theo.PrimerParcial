@@ -1,8 +1,8 @@
 namespace FrmPrincipal
 {
-    public partial class Form1 : Form
+    public partial class FrmSindicato : Form
     {
-        public Form1()
+        public FrmSindicato()
         {
             InitializeComponent();
         }
