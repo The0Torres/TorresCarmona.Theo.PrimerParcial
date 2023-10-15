@@ -2,9 +2,18 @@
 {
     public class Periodista : Trabajador
     {
-        public double credibilidad;
-        public EMedios medio;
-        public string especializacion;
+        protected double credibilidad;
+        protected EMedios medio;
+        protected string especializacion;
+
+        public double Credibilidad
+        { get { return credibilidad; } }
+
+        public EMedios Medio
+        { get { return medio; } }
+
+        public string Especializacion
+        { get { return especializacion; } }
 
         public Periodista(string nombre, string apellido, double salario, ETipo tipo, string especializacion) 
             :base(nombre, apellido, salario, tipo)

@@ -6,6 +6,15 @@
         public int trofeos;
         public int rankingMundial;
 
+        public int RankingMundial
+        { get { return rankingMundial; } }
+
+        public int Trofeos
+        { get { return trofeos; } }
+
+        public string Deporte
+        { get { return deporte; } }
+
         public Deportista(string nombre, string apellido, double salario, ETipo tipo, string deporte) 
             : base(nombre, apellido, salario, tipo)
         {

@@ -4,7 +4,16 @@
     {
         public int cirugias;
         public string especialidad;
-        public EHospitales Hospital;
+        public EHospitales hospital;
+
+        public int Cirugias
+        { get { return cirugias; } }
+
+        public EHospitales Hospital
+        { get { return hospital; } }
+
+        public string Especialidad
+        { get { return especialidad; } }
 
 
         public Cirujano(string nombre, string apellido, double salario,ETipo tipo, string especialidad)
@@ -16,7 +25,7 @@
         public Cirujano(string nombre, string apellido, double salario,ETipo tipo ,string especialidad, EHospitales hospital)
             : this(nombre, apellido , salario, tipo, especialidad)
         {
-            this.Hospital = hospital;
+            this.hospital = hospital;
         }
 
         public Cirujano(string nombre, string apellido, double salario,ETipo tipo ,string especialidad, EHospitales hospital, int cirugias)
