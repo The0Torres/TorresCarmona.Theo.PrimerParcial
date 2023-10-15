@@ -6,5 +6,10 @@ namespace FrmPrincipal
         {
             InitializeComponent();
         }
+
+        public FrmSindicato(Usuario usuario) : this()
+        {
+            MessageBox.Show($"Bienvenido {usuario.nombre}");
+        }
     }
 }
