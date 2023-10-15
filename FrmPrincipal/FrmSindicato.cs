@@ -11,5 +11,10 @@ namespace FrmPrincipal
         {
             MessageBox.Show($"Bienvenido {usuario.nombre}");
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

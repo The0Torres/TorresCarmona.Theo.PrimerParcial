@@ -19,3 +19,4 @@ C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\refint\FrmPrin
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.pdb
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.genruntimeconfig.cache
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\ref\FrmPrincipal.dll
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmTrabajador.resources

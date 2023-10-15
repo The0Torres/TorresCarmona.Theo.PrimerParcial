@@ -113,12 +113,11 @@
         }
 
         #endregion
-
-        private Label label1;
-        private TextBox txtCorreo;
-        private TextBox txtContraseña;
-        private Label label2;
-        private Button btnAceptar;
-        private Button btnCancelar;
+        public TextBox txtCorreo;
+        public Label label1;
+        public TextBox txtContraseña;
+        public Label label2;
+        public Button btnAceptar;
+        public Button btnCancelar;
     }
 }
