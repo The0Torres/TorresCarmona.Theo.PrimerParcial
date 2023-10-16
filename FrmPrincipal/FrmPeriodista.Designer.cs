@@ -38,19 +38,19 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(232, 288);
+            btnAgregar.Location = new Point(144, 288);
             btnAgregar.Size = new Size(102, 52);
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(495, 288);
+            btnCancelar.Location = new Point(428, 288);
             btnCancelar.Size = new Size(104, 52);
             btnCancelar.Click += btnCancelar_Click;
             // 
             // txtCredibilidad
             // 
-            txtCredibilidad.Location = new Point(485, 83);
+            txtCredibilidad.Location = new Point(403, 83);
             txtCredibilidad.Name = "txtCredibilidad";
             txtCredibilidad.Size = new Size(284, 23);
             txtCredibilidad.TabIndex = 11;
@@ -58,14 +58,14 @@
             // cmbMedio
             // 
             cmbMedio.FormattingEnabled = true;
-            cmbMedio.Location = new Point(485, 143);
+            cmbMedio.Location = new Point(403, 143);
             cmbMedio.Name = "cmbMedio";
             cmbMedio.Size = new Size(284, 23);
             cmbMedio.TabIndex = 12;
             // 
             // txtEspecializacion
             // 
-            txtEspecializacion.Location = new Point(485, 207);
+            txtEspecializacion.Location = new Point(403, 212);
             txtEspecializacion.Name = "txtEspecializacion";
             txtEspecializacion.Size = new Size(284, 23);
             txtEspecializacion.TabIndex = 13;
@@ -74,7 +74,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(485, 64);
+            label5.Location = new Point(403, 64);
             label5.Name = "label5";
             label5.Size = new Size(78, 16);
             label5.TabIndex = 14;
@@ -84,7 +84,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(485, 124);
+            label6.Location = new Point(403, 116);
             label6.Name = "label6";
             label6.Size = new Size(46, 16);
             label6.TabIndex = 15;
@@ -93,7 +93,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(485, 189);
+            label7.Location = new Point(403, 189);
             label7.Name = "label7";
             label7.Size = new Size(89, 15);
             label7.TabIndex = 16;
@@ -103,7 +103,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(815, 368);
+            ClientSize = new Size(706, 354);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);

@@ -45,7 +45,7 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!double.TryParse(this.txtCredibilidad.Text,out double credibilidad ))
+            if (!double.TryParse(this.txtCredibilidad.Text, out double credibilidad))
             {
                 MessageBox.Show("Ingrese un porcentaje de credibilidad.",
                                         "Advertencia",
@@ -73,18 +73,18 @@ namespace FrmPrincipal
             }
             else
             {
-                
+
                 nombre = txtNombre.Text;
                 apellido = txtApellido.Text;
                 salario = double.Parse(txtSalario.Text);
-                tipo= (ETipo)cmbTipo.SelectedItem;
+                tipo = (ETipo)cmbTipo.SelectedItem;
                 especializacion = txtEspecializacion.Text;
                 medio = (EMedios)cmbMedio.SelectedItem;
-                periodista = new Periodista(nombre, apellido, salario,tipo, especializacion, credibilidad, medio);
+                periodista = new Periodista(nombre, apellido, salario, tipo, especializacion, credibilidad, medio);
 
                 DialogResult = DialogResult.OK;
             }
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
