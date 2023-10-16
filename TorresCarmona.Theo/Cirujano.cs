@@ -41,7 +41,7 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $"Cirujano {especialidad} - Cirugías realizadas: {cirugias} - Hospital: {Hospital}";
+            return base.MostrarDatos() + $" - Cirujano {especialidad} - Cirugías realizadas: {cirugias} - Hospital: {Hospital}";
         }
 
 

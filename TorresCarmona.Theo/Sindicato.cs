@@ -2,7 +2,7 @@
 {
     public class Sindicato
     {
-        private List<Trabajador> Trabajador = new List<Trabajador>();
+        public List<Trabajador> Trabajador = new List<Trabajador>();
 
         public static Sindicato operator +(Sindicato coleccion, Trabajador trabajador)
         {
@@ -34,32 +34,32 @@
 
         public void OrdenarPorNombreAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.nombre.CompareTo(t2.nombre));
+            Trabajador.Sort((t1, t2) => t1.Nombre.CompareTo(t2.Nombre));
         }
 
         public void OrdenarPorNombreDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.nombre.CompareTo(t1.nombre));
+            Trabajador.Sort((t1, t2) => t2.Nombre.CompareTo(t1.Nombre));
         }
 
         public void OrdenarPorApellidoAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.apellido.CompareTo(t2.apellido));
+            Trabajador.Sort((t1, t2) => t1.Apellido.CompareTo(t2.Apellido));
         }
 
         public void OrdenarPorApellidoDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.apellido.CompareTo(t1.apellido));
+            Trabajador.Sort((t1, t2) => t2.Apellido.CompareTo(t1.Apellido));
         }
 
         public void OrdenarPorSalarioAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.salario.CompareTo(t2.salario));
+            Trabajador.Sort((t1, t2) => t1.Salario.CompareTo(t2.Salario));
         }
 
         public void OrdenarPorSalarioDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.salario.CompareTo(t1.salario));
+            Trabajador.Sort((t1, t2) => t2.Salario.CompareTo(t1.Salario));
         }
 
     }

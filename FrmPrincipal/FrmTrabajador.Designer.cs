@@ -63,6 +63,7 @@
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtNombre
             // 
@@ -132,7 +133,6 @@
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(299, 23);
             cmbTipo.TabIndex = 10;
-            cmbTipo.SelectedIndexChanged += cmbTipo_SelectedIndexChanged;
             // 
             // FrmTrabajador
             // 
@@ -158,16 +158,15 @@
         }
 
         #endregion
-
-        private Button btnAgregar;
-        private Button btnCancelar;
-        private TextBox txtNombre;
-        private TextBox txtApellido;
-        private TextBox txtSalario;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private ComboBox cmbTipo;
+        public Button btnAgregar;
+        public Button btnCancelar;
+        public TextBox txtNombre;
+        public TextBox txtApellido;
+        public TextBox txtSalario;
+        public ComboBox cmbTipo;
     }
 }

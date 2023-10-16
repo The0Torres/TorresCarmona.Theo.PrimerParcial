@@ -40,7 +40,7 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $"Deporte: {deporte} - Trofeos: {trofeos} - Ranking deportistas: {rankingMundial}";
+            return base.MostrarDatos() + $" - Deporte: {deporte} - Trofeos: {trofeos} - Ranking deportistas: {rankingMundial}";
         }
 
 

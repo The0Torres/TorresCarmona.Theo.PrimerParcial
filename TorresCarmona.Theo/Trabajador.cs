@@ -2,10 +2,22 @@
 {
     public abstract class Trabajador
     {
-        public string nombre;
-        public string apellido;
-        public double salario;
-        public ETipo Tipo;
+        protected string nombre;
+        protected string apellido;
+        protected double salario;
+        protected ETipo tipo;
+
+        public string Nombre
+        { get { return nombre; } }
+
+        public string Apellido
+        { get { return apellido; } }
+
+        public double Salario
+        { get { return salario; } }
+
+        public ETipo Tipo
+        { get { return tipo; } }
 
         public Trabajador(string nombre, string apellido)
         {
@@ -22,7 +34,7 @@
         public Trabajador(string nombre, string apellido, double salario, ETipo tipo)
             : this(nombre, apellido, salario)
         {
-            this.Tipo = tipo;
+            this.tipo = tipo;
         }
 
         protected abstract void RealizarTarea();

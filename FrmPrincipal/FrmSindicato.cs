@@ -1,10 +1,26 @@
+using Laburos;
+using System.Collections.Generic;
+
 namespace FrmPrincipal
 {
     public partial class FrmSindicato : Form
     {
+
+        private List<Trabajador> Trabajadores { get; set; }
+
+        public void ActualizarLista()
+        {
+            this.lstSindicato.Items.Clear();
+            foreach (Trabajador trabajador in Trabajadores)
+            {
+                lstSindicato.Items.Add(trabajador.MostrarDatos());
+            }
+        }
+
         public FrmSindicato()
         {
             InitializeComponent();
+            this.Trabajadores = new List<Trabajador>();
         }
 
         public FrmSindicato(Usuario usuario) : this()
@@ -19,8 +35,14 @@ namespace FrmPrincipal
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmTrabajador frm1 = new FrmTrabajador();
+            FrmProfesion frm1 = new FrmProfesion();
             frm1.ShowDialog();
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

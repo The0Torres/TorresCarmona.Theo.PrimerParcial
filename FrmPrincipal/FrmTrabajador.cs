@@ -19,9 +19,9 @@ namespace FrmPrincipal
             InitializeComponent();
         }
 
-        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            string seleccion = cmbTipo.SelectedItem.ToString();
+            this.Close();
         }
 
         private void FrmTrabajador_Load(object sender, EventArgs e)

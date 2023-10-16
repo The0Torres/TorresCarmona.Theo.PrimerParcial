@@ -20,3 +20,7 @@ C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.p
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.genruntimeconfig.cache
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\ref\FrmPrincipal.dll
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmTrabajador.resources
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmPeriodista.resources
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmCirujano.resources
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmDeportista.resources
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmProfesion.resources

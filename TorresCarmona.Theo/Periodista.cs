@@ -40,7 +40,7 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $"Periodista {especializacion} - Medio: {medio} - Credibilidad: {credibilidad}%";
+            return base.MostrarDatos() + $" - Periodista {especializacion} - Medio: {medio} - Credibilidad: {credibilidad}%";
         }
 
 
