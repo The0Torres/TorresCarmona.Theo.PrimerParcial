@@ -23,10 +23,24 @@ namespace FrmPrincipal
             get { return deportista; }
         }
 
+
+        public FrmDeportista(Deportista deportista) :this()
+        {
+            txtNombre.Text = deportista.Nombre;
+            txtApellido.Text = deportista.Apellido;
+            txtSalario.Text = deportista.Salario.ToString();
+            cmbTipo.SelectedItem = deportista.Tipo;
+            txtDeporte.Text = deportista.Deporte;
+            txtTrofeos.Text = deportista.Trofeos.ToString();
+            txtRanking.Text = deportista.RankingMundial.ToString();
+        }
+
+
         public FrmDeportista()
         {
             InitializeComponent();
         }
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {

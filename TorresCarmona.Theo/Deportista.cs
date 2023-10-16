@@ -2,9 +2,9 @@
 {
     public class Deportista:Trabajador
     {
-        public string deporte;
-        public int trofeos;
-        public int rankingMundial;
+        protected string deporte;
+        protected int trofeos;
+        protected int rankingMundial;
 
         public int RankingMundial
         { get { return rankingMundial; } }

@@ -63,7 +63,7 @@ namespace FrmPrincipal
             }
             else
             {
-                MessageBox.Show("Por favor seleccione un vehiculo",
+                MessageBox.Show("Por favor seleccione una profesion",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning

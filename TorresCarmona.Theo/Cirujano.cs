@@ -2,9 +2,9 @@
 {
     public class Cirujano:Trabajador
     {
-        public int cirugias;
-        public string especialidad;
-        public EHospitales hospital;
+        protected int cirugias;
+        protected string especialidad;
+        protected EHospitales hospital;
 
         public int Cirugias
         { get { return cirugias; } }

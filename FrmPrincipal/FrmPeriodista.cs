@@ -26,6 +26,16 @@ namespace FrmPrincipal
             get { return this.periodista; }
         }
 
+        public FrmPeriodista(Periodista periodista) :this()
+        {
+            txtNombre.Text = periodista.Nombre;
+            txtApellido.Text = periodista.Apellido;
+            txtSalario.Text = periodista.Salario.ToString();
+            cmbTipo.SelectedItem = periodista.Tipo;
+            txtEspecializacion.Text = periodista.Especializacion;
+            txtCredibilidad.Text = periodista.Credibilidad.ToString();
+            cmbMedio.SelectedItem = periodista.Medio;
+        }
 
         public FrmPeriodista()
         {
