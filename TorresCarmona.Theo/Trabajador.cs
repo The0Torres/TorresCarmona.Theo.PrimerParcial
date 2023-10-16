@@ -8,40 +8,52 @@
         protected ETipo tipo;
 
         public string Nombre
-        { get { return nombre; } }
+        { 
+            get { return nombre; }
+            set { nombre = value; }        
+        }
 
         public string Apellido
-        { get { return apellido; } }
+        {
+            get { return apellido; }
+            set { apellido = value; }                   
+        }
 
         public double Salario
-        { get { return salario; } }
+        { 
+            get { return salario; } 
+            set { salario = value; }       
+        }
 
         public ETipo Tipo
-        { get { return tipo; } }
-
-        public Trabajador(string nombre, string apellido)
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
+        { 
+            get { return tipo; }
+            set { tipo = value; }
         }
 
-        public Trabajador(string nombre, string apellido, double salario)
-            : this(nombre, apellido)
+        public Trabajador(string Nombre, string Apellido)
         {
-            this.salario = salario;
+            this.nombre = Nombre;
+            this.apellido = Apellido;
         }
 
-        public Trabajador(string nombre, string apellido, double salario, ETipo tipo)
-            : this(nombre, apellido, salario)
+        public Trabajador(string Nombre, string Apellido, double Salario)
+            : this(Nombre, Apellido)
         {
-            this.tipo = tipo;
+            this.salario = Salario;
+        }
+
+        public Trabajador(string Nombre, string Apellido, double Salario, ETipo Tipo)
+            : this(Nombre, Apellido, Salario)
+        {
+            this.tipo = Tipo;
         }
 
         protected abstract void RealizarTarea();
 
         public virtual string MostrarDatos()
         {
-            return $"{nombre} {apellido} - {Tipo} - {salario}$";
+            return $"{Nombre} {Apellido} - {Tipo} - {Salario}$";
         }
         public override string ToString()
         {
@@ -56,7 +68,7 @@
             }
 
             Trabajador otroTrabajador = (Trabajador)obj;
-            return this.nombre == otroTrabajador.nombre && this.apellido == otroTrabajador.apellido;
+            return this.nombre == otroTrabajador.Nombre && this.apellido == otroTrabajador.Apellido;
         }
 
     }

@@ -7,30 +7,39 @@
         protected string especializacion;
 
         public double Credibilidad
-        { get { return credibilidad; } }
+        { 
+            get { return credibilidad; } 
+            set { credibilidad = value;}
+        }
 
         public EMedios Medio
-        { get { return medio; } }
+        { 
+            get { return medio; }
+            set { medio = value; }
+        }
 
         public string Especializacion
-        { get { return especializacion; } }
-
-        public Periodista(string nombre, string apellido, double salario, ETipo tipo, string especializacion) 
-            :base(nombre, apellido, salario, tipo)
-        {
-            this.especializacion = especializacion;
+        { 
+            get { return especializacion; }
+            set { especializacion = value;}
         }
 
-        public Periodista(string nombre, string apellido, double salario, ETipo tipo,string especializacion, double credibilidad) 
-            :this(nombre, apellido, salario, tipo, especializacion)
+        public Periodista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Especializacion) 
+            :base(Nombre, Apellido, Salario, Tipo)
         {
-            this.credibilidad = credibilidad;
+            this.especializacion = Especializacion;
         }
 
-        public Periodista(string nombre, string apellido, double salario, ETipo tipo, string especializacion, double credibilidad, EMedios medio) 
-            :this(nombre, apellido, salario, tipo, especializacion, credibilidad)
+        public Periodista(string Nombre, string Apellido, double Salario, ETipo Tipo,string Especializacion, double Credibilidad) 
+            :this(Nombre, Apellido, Salario, Tipo, Especializacion)
         {
-            this.medio = medio;
+            this.credibilidad = Credibilidad;
+        }
+
+        public Periodista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Especializacion, double Credibilidad, EMedios Medio) 
+            :this(Nombre, Apellido, Salario, Tipo, Especializacion, Credibilidad)
+        {
+            this.medio = Medio;
         }
 
         protected override void RealizarTarea()
@@ -40,14 +49,14 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $" - Periodista {especializacion} - Medio: {medio} - Credibilidad: {credibilidad}%";
+            return base.MostrarDatos() + $" - Periodista {Especializacion} - Medio: {Medio} - Credibilidad: {Credibilidad}%";
         }
 
 
         public static bool operator ==(Periodista periodista1, Periodista periodista2)
         {
 
-            return periodista1.nombre == periodista2.nombre && periodista1.apellido == periodista2.apellido;
+            return periodista1.Nombre == periodista2.Nombre && periodista1.Apellido == periodista2.Apellido;
         }
 
         public static bool operator !=(Periodista periodista1, Periodista periodista2)
@@ -63,7 +72,7 @@
             }
 
             Periodista otroperiodista = (Periodista)obj;
-            return this.nombre == otroperiodista.nombre && this.apellido == otroperiodista.apellido;
+            return this.Nombre == otroperiodista.Nombre && this.Apellido == otroperiodista.Apellido;
         }
 
     }

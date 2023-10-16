@@ -19,6 +19,7 @@ namespace FrmPrincipal
         public Trabajador Trabajador
         {
             get { return trabajador; }
+            set { trabajador = value; }
         }
 
         public FrmProfesion()
@@ -34,7 +35,7 @@ namespace FrmPrincipal
                 DialogResult resultado = frmperiodista.ShowDialog();
                 if(resultado == DialogResult.OK)
                 {
-                    trabajador =  frmperiodista.Periodista;
+                    Trabajador =  frmperiodista.Periodista;
                     this.DialogResult = DialogResult.OK;
                 }
                 this.Hide();
@@ -45,7 +46,7 @@ namespace FrmPrincipal
                 DialogResult resultado = frmcirujano.ShowDialog();
                 if (resultado == DialogResult.OK)
                 {
-                    trabajador = frmcirujano.Cirujano;
+                    Trabajador = frmcirujano.Cirujano;
                     this.DialogResult = DialogResult.OK;
                 }
                 this.Hide();
@@ -56,7 +57,7 @@ namespace FrmPrincipal
                 DialogResult resultado = frmdeportista.ShowDialog();
                 if (resultado == DialogResult.OK)
                 {
-                    trabajador = frmdeportista.Deportista;
+                    Trabajador = frmdeportista.Deportista;
                     this.DialogResult = DialogResult.OK;
                 }
                 this.Hide();

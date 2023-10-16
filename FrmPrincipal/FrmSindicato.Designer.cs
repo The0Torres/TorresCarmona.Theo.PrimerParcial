@@ -106,6 +106,7 @@
             btnOrdenar.TabIndex = 5;
             btnOrdenar.Text = "Ordenar";
             btnOrdenar.UseVisualStyleBackColor = false;
+            btnOrdenar.Click += btnOrdenar_Click;
             // 
             // FrmSindicato
             // 

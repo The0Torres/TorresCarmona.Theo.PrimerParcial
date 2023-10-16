@@ -12,7 +12,7 @@ using Microsoft.VisualBasic.Devices;
 
 namespace FrmPrincipal
 {
-    public partial class FrmCirujano : FrmPrincipal.FrmTrabajador
+    public partial class FrmCirujano : FrmTrabajador
     {
 
         protected EHospitales hospital;
@@ -23,6 +23,17 @@ namespace FrmPrincipal
         public Cirujano Cirujano
         {
             get { return cirujano; }
+        }
+
+        public FrmCirujano(Cirujano cirujano): this()
+        {
+            txtNombre.Text = cirujano.Nombre;
+            txtApellido.Text = cirujano.Apellido;
+            txtSalario.Text = cirujano.Salario.ToString();
+            cmbTipo.SelectedItem = cirujano.Tipo;
+            txtEspecialidad.Text = cirujano.Especialidad;
+            txtCirugias.Text = cirujano.Cirugias.ToString();
+            cmbHospital.SelectedItem = cirujano.Hospital;
         }
 
         public FrmCirujano()

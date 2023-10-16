@@ -12,7 +12,7 @@ using Microsoft.VisualBasic.Devices;
 
 namespace FrmPrincipal
 {
-    public partial class FrmDeportista : FrmPrincipal.FrmTrabajador
+    public partial class FrmDeportista : FrmTrabajador
     {
         protected string deporte;
 

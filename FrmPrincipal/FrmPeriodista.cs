@@ -13,7 +13,7 @@ using Laburos;
 
 namespace FrmPrincipal
 {
-    public partial class FrmPeriodista : FrmPrincipal.FrmTrabajador
+    public partial class FrmPeriodista : FrmTrabajador
     {
 
         public string especializacion;

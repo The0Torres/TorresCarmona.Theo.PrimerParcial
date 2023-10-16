@@ -7,30 +7,39 @@
         protected int rankingMundial;
 
         public int RankingMundial
-        { get { return rankingMundial; } }
+        { 
+            get { return rankingMundial; }
+            set { rankingMundial = value; }
+        }
 
         public int Trofeos
-        { get { return trofeos; } }
+        {
+            get { return trofeos; }
+            set { trofeos = value;}
+        }
 
         public string Deporte
-        { get { return deporte; } }
-
-        public Deportista(string nombre, string apellido, double salario, ETipo tipo, string deporte) 
-            : base(nombre, apellido, salario, tipo)
-        {
-            this.deporte = deporte;
+        { 
+            get { return deporte; }
+            set { deporte = value; }
         }
 
-        public Deportista(string nombre, string apellido, double salario, ETipo tipo, string deporte, int trofeos) 
-            : this(nombre, apellido, salario, tipo, deporte)
+        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte) 
+            : base(Nombre, Apellido, Salario, Tipo)
         {
-            this.trofeos = trofeos;
+            this.deporte = Deporte;
         }
 
-        public Deportista(string nombre, string apellido, double salario, ETipo tipo, string deporte, int trofeos, int rankingMundial) 
-            : this(nombre, apellido, salario, tipo, deporte,trofeos)
+        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, int Trofeos) 
+            : this(Nombre, Apellido, Salario, Tipo, Deporte)
         {
-            this.rankingMundial = rankingMundial;
+            this.trofeos = Trofeos;
+        }
+
+        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, int Trofeos, int RankingMundial) 
+            : this(Nombre, Apellido, Salario, Tipo, Deporte,Trofeos)
+        {
+            this.rankingMundial = RankingMundial;
         }
 
         protected override void RealizarTarea()
@@ -40,14 +49,13 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $" - Deporte: {deporte} - Trofeos: {trofeos} - Ranking deportistas: {rankingMundial}";
+            return base.MostrarDatos() + $" - Deporte: {Deporte} - Trofeos: {Trofeos} - Ranking deportistas: {RankingMundial}";
         }
 
 
         public static bool operator ==(Deportista deportista1, Deportista deportista2)
         {
-
-            return deportista1.nombre == deportista2.nombre && deportista1.apellido == deportista2.apellido;
+            return deportista1.Nombre == deportista2.Nombre && deportista1.Apellido == deportista2.Apellido;
         }
 
         public static bool operator !=(Deportista deportista1, Deportista deportista2)
@@ -63,7 +71,7 @@
             }
 
             Deportista otroDeportista = (Deportista)obj;
-            return this.nombre == otroDeportista.nombre && this.apellido == otroDeportista.apellido;
+            return this.Nombre == otroDeportista.Nombre && this.Apellido == otroDeportista.Apellido;
         }
     }
 }

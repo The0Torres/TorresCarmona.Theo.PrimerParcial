@@ -6,12 +6,18 @@ namespace FrmPrincipal
     public partial class FrmSindicato : Form
     {
 
-        Sindicato sindicato = new Sindicato();
+        private Sindicato sindicato;
 
+        public Sindicato Sindicato
+        {
+            get { return sindicato; }
+            set { sindicato = value; }
+        }
 
         public FrmSindicato()
         {
             InitializeComponent();
+            Sindicato = new Sindicato();
         }
 
         public FrmSindicato(Usuario usuario) : this()
@@ -22,7 +28,7 @@ namespace FrmPrincipal
         private void ActualizarVisor()
         {
             this.lstSindicato.Items.Clear();
-            foreach (Trabajador trabajador in sindicato.Trabajadores)
+            foreach (Trabajador trabajador in Sindicato.Trabajadores)
             {
                 this.lstSindicato.Items.Add(trabajador.ToString());
             }
@@ -35,7 +41,47 @@ namespace FrmPrincipal
             if (indice == -1)
             {
                 MessageBox.Show("Por favor, selecciona un elemento para modificar.", "Elemento no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+            }
+            else
+            {
+                object trabajador = Sindicato.Trabajadores[indice];
+
+                DialogResult resultado;
+                if (trabajador is Periodista)
+                {
+                    FrmPeriodista frmperiodista = new FrmPeriodista((Periodista)trabajador);
+
+                    resultado = frmperiodista.ShowDialog();
+                    if (resultado == DialogResult.OK)
+                    {
+                        Sindicato.Trabajadores[indice] = frmperiodista.Periodista;
+                    }
+                }
+
+                else if (trabajador is Cirujano)
+                {
+                    FrmCirujano frmcirujano = new FrmCirujano((Cirujano)trabajador);
+
+                    resultado = frmcirujano.ShowDialog();
+                    if (resultado == DialogResult.OK)
+                    {
+                        Sindicato.Trabajadores[indice] = frmcirujano.Cirujano;
+                    }
+                }
+
+                else if (trabajador is Deportista)
+                {
+                    FrmDeportista frmdeportista = new FrmDeportista((Deportista)trabajador);
+
+                    resultado = frmdeportista.ShowDialog();
+                    if (resultado == DialogResult.OK)
+                    {
+                        Sindicato.Trabajadores[indice] = frmdeportista.Deportista;
+                    }
+                }
+
+                this.ActualizarVisor();
+
             }
 
         }
@@ -48,7 +94,7 @@ namespace FrmPrincipal
             if (resultado == DialogResult.OK)
             {
                 Trabajador nuevoTrabajador = frm1.Trabajador;
-                sindicato += nuevoTrabajador;
+                Sindicato += nuevoTrabajador;
                 this.ActualizarVisor();
             }
         }
@@ -60,13 +106,22 @@ namespace FrmPrincipal
             if (indice == -1)
             {
                 MessageBox.Show("Por favor, selecciona un elemento para eliminar.", "Elemento no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+            }
+            else
+            {
+                Trabajador trabajador = Sindicato.Trabajadores[indice];
+                Sindicato -= trabajador;
+                this.ActualizarVisor();
+
             }
 
-            Trabajador trabajador = sindicato.Trabajadores[indice];
-            sindicato -= trabajador;
-            this.ActualizarVisor();
+        }
 
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            Sindicato.OrdenarPorSalarioAscendente();
+
+            this.ActualizarVisor();
         }
     }
 }

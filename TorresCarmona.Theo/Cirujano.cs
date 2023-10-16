@@ -7,31 +7,40 @@
         protected EHospitales hospital;
 
         public int Cirugias
-        { get { return cirugias; } }
+        { 
+            get { return cirugias; } 
+            set { cirugias = value; }
+        }
 
         public EHospitales Hospital
-        { get { return hospital; } }
+        { 
+            get { return hospital; } 
+            set { hospital = value; }        
+        }
 
         public string Especialidad
-        { get { return especialidad; } }
-
-
-        public Cirujano(string nombre, string apellido, double salario,ETipo tipo, string especialidad)
-            : base(nombre, apellido, salario, tipo)
-        {
-            this.especialidad = especialidad;
+        { 
+            get { return especialidad; }
+            set { especialidad = value; }
         }
 
-        public Cirujano(string nombre, string apellido, double salario,ETipo tipo ,string especialidad, EHospitales hospital)
-            : this(nombre, apellido , salario, tipo, especialidad)
+
+        public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo, string Especialidad)
+            : base(Nombre, Apellido, Salario, Tipo)
         {
-            this.hospital = hospital;
+            this.especialidad = Especialidad;
         }
 
-        public Cirujano(string nombre, string apellido, double salario,ETipo tipo ,string especialidad, EHospitales hospital, int cirugias)
-            : this(nombre, apellido, salario, tipo, especialidad, hospital)
+        public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo ,string Especialidad, EHospitales Hospital)
+            : this(Nombre, Apellido , Salario, Tipo, Especialidad)
         {
-            this.cirugias = cirugias;
+            this.hospital = Hospital;
+        }
+
+        public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo ,string Especialidad, EHospitales Hospital, int Cirugias)
+            : this(Nombre, Apellido, Salario, Tipo, Especialidad, Hospital)
+        {
+            this.cirugias = Cirugias;
         }
 
         protected override void RealizarTarea()
@@ -41,14 +50,14 @@
 
         public override string MostrarDatos()
         {
-            return base.MostrarDatos() + $" - Cirujano {especialidad} - Cirugías realizadas: {cirugias} - Hospital {Hospital}";
+            return base.MostrarDatos() + $" - Cirujano {Especialidad} - Cirugías realizadas: {Cirugias} - Hospital {Hospital}";
         }
 
 
         public static bool operator ==(Cirujano cirujano1, Cirujano cirujano2)
         {
 
-            return cirujano1.nombre == cirujano2.nombre && cirujano1.apellido == cirujano2.apellido;
+            return cirujano1.Nombre == cirujano2.Nombre && cirujano1.Apellido == cirujano2.Apellido;
         }
 
         public static bool operator !=(Cirujano cirujano1, Cirujano cirujano2)
@@ -64,7 +73,7 @@
             }
 
             Cirujano otroCirujano = (Cirujano)obj;
-            return this.nombre == otroCirujano.nombre && this.apellido == otroCirujano.apellido;
+            return this.nombre == otroCirujano.Nombre && this.apellido == otroCirujano.Apellido;
         }
     }
 }
