@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Laburos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,14 @@ namespace FrmPrincipal
 {
     public partial class FrmProfesion : Form
     {
+
+        private Trabajador trabajador;
+
+        public Trabajador Trabajador
+        {
+            get { return trabajador; }
+        }
+
         public FrmProfesion()
         {
             InitializeComponent();
@@ -23,18 +32,33 @@ namespace FrmPrincipal
             {
                 FrmPeriodista frmperiodista = new FrmPeriodista();
                 DialogResult resultado = frmperiodista.ShowDialog();
+                if(resultado == DialogResult.OK)
+                {
+                    trabajador =  frmperiodista.Periodista;
+                    this.DialogResult = DialogResult.OK;
+                }
                 this.Hide();
             }
             else if (this.rbtnCirujano.Checked)
             {
                 FrmCirujano frmcirujano = new FrmCirujano();
                 DialogResult resultado = frmcirujano.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    trabajador = frmcirujano.Cirujano;
+                    this.DialogResult = DialogResult.OK;
+                }
                 this.Hide();
             }
             else if (this.rbtnDeportista.Checked)
             {
                 FrmDeportista frmdeportista = new FrmDeportista();
                 DialogResult resultado = frmdeportista.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    trabajador = frmdeportista.Deportista;
+                    this.DialogResult = DialogResult.OK;
+                }
                 this.Hide();
             }
             else

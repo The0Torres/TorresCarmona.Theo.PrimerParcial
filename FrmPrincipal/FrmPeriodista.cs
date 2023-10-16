@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Laburos;
 
 namespace FrmPrincipal
 {
     public partial class FrmPeriodista : FrmPrincipal.FrmTrabajador
     {
-        public Laburos.Periodista periodista;
+        private Periodista periodista;
+
+        public Periodista Periodista
+        {
+            get { return this.periodista; }
+        }
 
 
         public FrmPeriodista(Laburos.Periodista perod) : this()
