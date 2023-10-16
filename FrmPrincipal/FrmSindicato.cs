@@ -119,9 +119,12 @@ namespace FrmPrincipal
 
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
-            Sindicato.OrdenarPorSalarioAscendente();
-
-            this.ActualizarVisor();
+            FrmOrdenamiento ordenamiento = new FrmOrdenamiento(sindicato);
+            DialogResult resultado = ordenamiento.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                this.ActualizarVisor();
+            }
         }
     }
 }

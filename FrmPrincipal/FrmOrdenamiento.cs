@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Laburos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace FrmPrincipal
 {
     public partial class FrmOrdenamiento : Form
     {
-        public FrmOrdenamiento()
+
+        private Sindicato sindicato;
+
+        public Sindicato Sindicato
+        {
+            get { return sindicato; }
+            set { sindicato = value; }
+        }
+
+
+        public FrmOrdenamiento(Sindicato sindicato)
         {
             InitializeComponent();
+            this.sindicato = sindicato;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -24,7 +36,48 @@ namespace FrmPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            if(rbtnSalario.Checked) 
+            {
+               if (rbtnAscendente.Checked) 
+               {
+                    Sindicato.OrdenarPorSalarioAscendente();
+               }
+               else if(rbtnDescendente.Checked)
+               {
+                    Sindicato.OrdenarPorSalarioDescendente();              
+               }
+            }
+            else if(rbtnApellido.Checked)
+            {
+                 if(rbtnAscendente.Checked)
+                {
+                    Sindicato.OrdenarPorApellidoAscendente();
+                }
+                else if(rbtnDescendente.Checked)
+                {
+                    Sindicato.OrdenarPorApellidoDescendente();
+                }
+            }
+            else if(rbtnNombre.Checked)
+            {
+                if(rbtnAscendente.Checked)
+                {
+                    Sindicato.OrdenarPorNombreAscendente();
+                }
+                else if (rbtnDescendente.Checked)
+                {
+                    Sindicato.OrdenarPorNombreDescendente();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una atributo y el orden",
+                                        "Advertencia",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning
+                                        );
+            }
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
