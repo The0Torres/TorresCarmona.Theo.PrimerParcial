@@ -2,29 +2,39 @@
 {
     public class Sindicato
     {
-        public List<Trabajador> Trabajador = new List<Trabajador>();
+        private List<Trabajador> trabajadores;
+
+        public List<Trabajador> Trabajadores
+        {
+            get { return trabajadores; }
+        }
+
+        public Sindicato()
+        {
+            trabajadores = new List<Trabajador>();
+        }
 
         public static Sindicato operator +(Sindicato coleccion, Trabajador trabajador)
         {
-            if (!coleccion.Trabajador.Contains(trabajador))
+            if (!coleccion.trabajadores.Contains(trabajador))
             {
-                coleccion.Trabajador.Add(trabajador);
+                coleccion.trabajadores.Add(trabajador);
             }
             return coleccion;
         }
 
         public static Sindicato operator -(Sindicato coleccion, Trabajador trabajador)
         {
-            if (coleccion.Trabajador.Contains(trabajador))
+            if (coleccion.trabajadores.Contains(trabajador))
             {
-                coleccion.Trabajador.Remove(trabajador);
+                coleccion.trabajadores.Remove(trabajador);
             }
             return coleccion;
         }
 
         public static bool operator ==(Sindicato coleccion, Trabajador trabajador)
         {
-            return coleccion.Trabajador.Contains(trabajador);
+            return coleccion.trabajadores.Contains(trabajador);
         }
 
         public static bool operator !=(Sindicato coleccion, Trabajador trabajador)
@@ -34,32 +44,32 @@
 
         public void OrdenarPorNombreAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.Nombre.CompareTo(t2.Nombre));
+            trabajadores.Sort((t1, t2) => t1.Nombre.CompareTo(t2.Nombre));
         }
 
         public void OrdenarPorNombreDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.Nombre.CompareTo(t1.Nombre));
+            trabajadores.Sort((t1, t2) => t2.Nombre.CompareTo(t1.Nombre));
         }
 
         public void OrdenarPorApellidoAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.Apellido.CompareTo(t2.Apellido));
+            trabajadores.Sort((t1, t2) => t1.Apellido.CompareTo(t2.Apellido));
         }
 
         public void OrdenarPorApellidoDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.Apellido.CompareTo(t1.Apellido));
+            trabajadores.Sort((t1, t2) => t2.Apellido.CompareTo(t1.Apellido));
         }
 
         public void OrdenarPorSalarioAscendente()
         {
-            Trabajador.Sort((t1, t2) => t1.Salario.CompareTo(t2.Salario));
+            trabajadores.Sort((t1, t2) => t1.Salario.CompareTo(t2.Salario));
         }
 
         public void OrdenarPorSalarioDescendente()
         {
-            Trabajador.Sort((t1, t2) => t2.Salario.CompareTo(t1.Salario));
+            trabajadores.Sort((t1, t2) => t2.Salario.CompareTo(t1.Salario));
         }
 
     }

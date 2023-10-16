@@ -13,11 +13,11 @@ namespace FrmPrincipal
 {
     public partial class FrmDeportista : FrmPrincipal.FrmTrabajador
     {
-        private Cirujano cirujano;
+        private Cirujano deportista;
 
-        public Cirujano Cirujano
+        public Cirujano Deportista
         {
-            get { return cirujano; }
+            get { return deportista; }
         }
 
         public FrmDeportista()

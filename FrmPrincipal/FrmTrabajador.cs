@@ -14,9 +14,19 @@ namespace FrmPrincipal
 {
     public partial class FrmTrabajador : Form
     {
+        protected string nombre;
+        protected string apellido;
+        protected double salario;
+        protected ETipo tipo;
+
         public FrmTrabajador()
         {
             InitializeComponent();
+            Array arrayTipo = Enum.GetValues(typeof(ETipo));
+            foreach (ETipo tipoElegido in arrayTipo)
+            {
+                this.cmbTipo.Items.Add(tipoElegido);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -24,9 +34,19 @@ namespace FrmPrincipal
             this.Close();
         }
 
-        private void FrmTrabajador_Load(object sender, EventArgs e)
+
+        protected bool ValidarDatos()
         {
-            cmbTipo.Items.AddRange(Enum.GetNames(typeof(ETipo)));
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) || 
+                string.IsNullOrEmpty(txtSalario.Text) || cmbTipo.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
+
     }
 }

@@ -112,7 +112,6 @@
             Controls.Add(txtCredibilidad);
             Name = "FrmPeriodista";
             Text = "FrmPeriodista";
-            Load += FrmPeriodista_Load;
             Controls.SetChildIndex(btnAgregar, 0);
             Controls.SetChildIndex(btnCancelar, 0);
             Controls.SetChildIndex(txtNombre, 0);

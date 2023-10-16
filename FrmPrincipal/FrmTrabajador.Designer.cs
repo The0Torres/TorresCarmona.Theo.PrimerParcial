@@ -152,7 +152,6 @@
             Controls.Add(btnAgregar);
             Name = "FrmTrabajador";
             Text = "FrmTrabajador";
-            Load += FrmTrabajador_Load;
             ResumeLayout(false);
             PerformLayout();
         }

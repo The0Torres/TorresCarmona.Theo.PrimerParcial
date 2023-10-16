@@ -6,21 +6,12 @@ namespace FrmPrincipal
     public partial class FrmSindicato : Form
     {
 
-        private List<Trabajador> Trabajadores { get; set; }
+        Sindicato sindicato = new Sindicato();
 
-        public void ActualizarLista()
-        {
-            this.lstSindicato.Items.Clear();
-            foreach (Trabajador trabajador in Trabajadores)
-            {
-                lstSindicato.Items.Add(trabajador.MostrarDatos());
-            }
-        }
 
         public FrmSindicato()
         {
             InitializeComponent();
-            this.Trabajadores = new List<Trabajador>();
         }
 
         public FrmSindicato(Usuario usuario) : this()
@@ -36,8 +27,12 @@ namespace FrmPrincipal
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmProfesion frm1 = new FrmProfesion();
-            frm1.ShowDialog();
-
+            DialogResult resultado = frm1.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                this.lstSindicato.Items.Add(frm1.Trabajador.ToString());
+                sindicato += frm1.Trabajador;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
