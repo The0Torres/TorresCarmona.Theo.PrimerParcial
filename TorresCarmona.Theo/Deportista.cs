@@ -25,9 +25,11 @@
             set { deporte = value; }
         }
 
-        public Deportista()
+        public Deportista() :base()
         {
-
+            this.deporte = "N/N";
+            this.trofeos = 0;
+            this.rankingMundial = 100;
         }
 
         public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte) 

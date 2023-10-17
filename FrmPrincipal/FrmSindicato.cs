@@ -100,6 +100,10 @@ namespace FrmPrincipal
             {
                 Trabajador nuevoTrabajador = frm1.Trabajador;
                 Sindicato += nuevoTrabajador;
+                if(Sindicato == nuevoTrabajador)
+                {
+                    MessageBox.Show("El trabajador ingresado ya existe.", "Ya existe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 this.ActualizarVisor();
             }
         }

@@ -12,7 +12,10 @@ namespace Laburos
         protected string nombre;
         protected string apellido;
         protected double salario;
-        protected ETipo tipo;
+        protected ETipo tipo; 
+        /// <summary>
+        /// Tipo se refiere a si es un Trabajdor de tipo Tiempo completo, medio tiempo o freelance
+        /// </summary>
 
         public string Nombre
         { 
@@ -40,7 +43,10 @@ namespace Laburos
 
         public Trabajador()
         {
-
+            this.nombre = "N/N";
+            this.apellido = "N/N";
+            this.salario = 1;
+            this.tipo = ETipo.Tiempocompleto;
         }
 
         public Trabajador(string Nombre, string Apellido)

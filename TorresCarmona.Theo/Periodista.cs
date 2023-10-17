@@ -24,9 +24,11 @@
             get { return especializacion; }
             set { especializacion = value;}
         }
-        public Periodista()
+        public Periodista() : base()
         {
-
+            this.credibilidad=0;
+            this.medio= EMedios.Television;
+            this.especializacion = "N/N";
         }
 
         public Periodista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Especializacion) 
