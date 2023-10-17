@@ -20,30 +20,9 @@ namespace FrmPrincipal
             //INDICO LA POSICION EN LA PANTALLA
             frm.StartPosition = FormStartPosition.CenterScreen;
 
-            int cantidad_intentos = 0;
-
             try
             {
                 frm.ShowDialog();
-
-                do
-                {
-                    if (cantidad_intentos == 2 && frm.UsuarioDelForm == null)
-                    {
-                        MessageBox.Show("Cantidad de intentos superada!!!", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        break;
-                    }
-                    else if (frm.UsuarioDelForm == null)
-                    {
-                        MessageBox.Show("Error en usuario y/o clave!!!", "CREDENCIALES", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        frm.ShowDialog();
-                    }
-
-                    cantidad_intentos++;
-
-
-                } while (cantidad_intentos < 3 && frm.DialogResult != DialogResult.Cancel);
 
                 //INDICO LA POSICION EN LA PANTALLA
                 if (frm.UsuarioDelForm != null)
@@ -60,11 +39,7 @@ namespace FrmPrincipal
             {
                 MessageBox.Show(ex.Message, "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                MessageBox.Show("La aplicación terminó.", "FIN DEL PROGRAMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            
         }
     }
 }

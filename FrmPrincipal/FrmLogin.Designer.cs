@@ -109,6 +109,7 @@
             Controls.Add(label1);
             Name = "FrmLogin";
             Text = "Inicio";
+            FormClosing += FrmLogin_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

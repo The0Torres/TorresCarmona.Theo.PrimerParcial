@@ -15,6 +15,7 @@ namespace FrmPrincipal
     public partial class FrmLogin : Form
     {
         private Usuario usuario;
+        private bool cerrarAplicacion = true;
 
         public Usuario UsuarioDelForm
         {
@@ -34,10 +35,19 @@ namespace FrmPrincipal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.usuario = this.Verificar();
+            Usuario usuarioVerificado = this.Verificar();
 
-            this.DialogResult = DialogResult.OK;
-
+            if (usuarioVerificado == null)
+            {
+                MessageBox.Show("Datos inválidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.usuario = this.Verificar();
+                this.DialogResult = DialogResult.OK;
+                cerrarAplicacion = false;
+            }
+            
         }
 
         private Usuario Verificar()
@@ -70,6 +80,23 @@ namespace FrmPrincipal
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cerrarAplicacion && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult resultado = MessageBox.Show("¿Está seguro de cerrar la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

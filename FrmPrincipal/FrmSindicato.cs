@@ -8,7 +8,8 @@ namespace FrmPrincipal
 {
     public partial class FrmSindicato : Form
     {
-
+        DateTime fechaActual = DateTime.Now;
+        private Usuario usuario;
         private Sindicato sindicato;
 
         public Sindicato Sindicato
@@ -20,13 +21,12 @@ namespace FrmPrincipal
         public FrmSindicato()
         {
             InitializeComponent();
-            Sindicato = new Sindicato();
-            this.Load += FrmSindicato_Load;
-            this.FormClosing += FrmSindicato_FormClosing;
+            Sindicato = new Sindicato();           
         }
 
         public FrmSindicato(Usuario usuario) : this()
         {
+            this.usuario = usuario;
             MessageBox.Show($"Bienvenido/a {usuario.nombre}");
         }
 
@@ -99,12 +99,16 @@ namespace FrmPrincipal
             if (resultado == DialogResult.OK)
             {
                 Trabajador nuevoTrabajador = frm1.Trabajador;
-                Sindicato += nuevoTrabajador;
-                if(Sindicato == nuevoTrabajador)
+                if (Sindicato == nuevoTrabajador)
                 {
                     MessageBox.Show("El trabajador ingresado ya existe.", "Ya existe", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                this.ActualizarVisor();
+                else
+                {
+                    Sindicato += nuevoTrabajador;
+                    this.ActualizarVisor();
+                }
+
             }
         }
 
@@ -138,9 +142,35 @@ namespace FrmPrincipal
 
         private void FrmSindicato_Load(object sender, EventArgs e)
         {
-            if (File.Exists("./datos.xml"))
+            lblUsuario.Text = $"Usuario: {this.usuario.nombre} - Fecha: {fechaActual}";
+        }
+
+        private void FrmSindicato_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                using (XmlTextReader lectorXml = new XmlTextReader("./datos.xml"))
+                DialogResult result = MessageBox.Show("¿Está seguro de cerrar la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos XML|*.xml|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (XmlTextReader lectorXml = new XmlTextReader(openFileDialog.FileName))
                 {
                     XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
                     this.sindicato = (Sindicato)serializador.Deserialize(lectorXml);
@@ -149,12 +179,18 @@ namespace FrmPrincipal
             }
         }
 
-        private void FrmSindicato_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (XmlTextWriter escritorXml = new XmlTextWriter("./datos.xml", Encoding.UTF8))
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos XML|*.xml|Todos los archivos|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
-                serializador.Serialize(escritorXml, this.sindicato);
+                using (XmlTextWriter escritorXml = new XmlTextWriter(saveFileDialog.FileName, Encoding.UTF8))
+                {
+                    XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
+                    serializador.Serialize(escritorXml, this.sindicato);
+                }
             }
         }
     }
