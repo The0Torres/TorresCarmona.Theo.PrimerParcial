@@ -25,3 +25,4 @@ C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.F
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmDeportista.resources
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmProfesion.resources
 C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmOrdenamiento.resources
+C:\Users\theo\PrimerParcial\FrmPrincipal\obj\Debug\net6.0-windows\FrmPrincipal.FrmRegistro.resources

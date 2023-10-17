@@ -18,7 +18,7 @@ namespace FrmPrincipal
 
         public override string ToString()
         {
-            return $"usuario: {this.correo} - nombre: {this.nombre}";
+            return $"Correo: {this.correo} - Nombre: {this.nombre} {this.apellido} - Perfil: {this.perfil} - Legajo: {legajo}";
         }
     }
 }

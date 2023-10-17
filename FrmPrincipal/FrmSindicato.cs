@@ -21,7 +21,7 @@ namespace FrmPrincipal
         public FrmSindicato()
         {
             InitializeComponent();
-            Sindicato = new Sindicato();           
+            Sindicato = new Sindicato();
         }
 
         public FrmSindicato(Usuario usuario) : this()
@@ -142,7 +142,16 @@ namespace FrmPrincipal
 
         private void FrmSindicato_Load(object sender, EventArgs e)
         {
+            string datos = usuario.ToString();
+
             lblUsuario.Text = $"Usuario: {this.usuario.nombre} - Fecha: {fechaActual}";
+            string logFilePath = "usuarios.log";
+            string entrada = $"{fechaActual.ToString("yyyy-MM-dd HH:mm:ss")} - {datos}\n";
+
+            using (StreamWriter registro = new StreamWriter(logFilePath, true))
+            {
+                registro.Write(entrada);
+            }
         }
 
         private void FrmSindicato_FormClosing(object sender, FormClosingEventArgs e)
@@ -153,7 +162,7 @@ namespace FrmPrincipal
                 DialogResult result = MessageBox.Show("¿Está seguro de cerrar la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
-                {
+                {                  
                     Application.Exit();
                 }
                 else
@@ -166,7 +175,7 @@ namespace FrmPrincipal
         private void btnCargar_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos XML|*.xml|Todos los archivos|*.*";
+            openFileDialog.Filter = "Archivos XML|*.xml";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -182,7 +191,7 @@ namespace FrmPrincipal
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivos XML|*.xml|Todos los archivos|*.*";
+            saveFileDialog.Filter = "Archivos XML|*.xml";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -192,6 +201,12 @@ namespace FrmPrincipal
                     serializador.Serialize(escritorXml, this.sindicato);
                 }
             }
+        }
+
+        private void btnSesiones_Click(object sender, EventArgs e)
+        {
+            FrmRegistro frmRegistro = new FrmRegistro();
+            frmRegistro.ShowDialog();
         }
     }
 }
