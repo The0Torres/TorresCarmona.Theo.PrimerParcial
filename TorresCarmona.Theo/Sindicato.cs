@@ -1,6 +1,11 @@
 ﻿namespace Laburos
 {
-    
+    /// <summary>
+    /// La clase Sindicato representa una colección de trabajadores de las diferentes clases y proporciona métodos para gestionarlos.
+    /// Permite agregar, quitar y verificar la existencia de trabajadores en la colección.
+    /// Proporciona métodos para ordenar la lista de trabajadores por nombre, apellido y salario en orden ascendente o descendente.
+    /// </summary>
+
     public class Sindicato
     {
         private List<Trabajador> trabajadores;

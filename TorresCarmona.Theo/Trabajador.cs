@@ -7,16 +7,21 @@ namespace Laburos
     [XmlInclude(typeof(Deportista))]
     [XmlInclude(typeof(Periodista))]
 
+    /// <summary>
+    /// La clase Trabajador es una clase abstracta que representa a un trabajador genérico.
+    /// Contiene propiedades para el nombre, apellido, salario y tipo de trabajador.
+    /// La clase implementa la serialización XML
+    /// Sobrecarga los métodos ToString y Equals para comparaciones de igualdad.
+    /// Es la base para diferentes tipos de trabajadores, como Cirujano,Deportista y Periodista, que heredan de esta clase.
+    /// </summary>
+
     public abstract class Trabajador
     {
         protected string nombre;
         protected string apellido;
         protected double salario;
         protected ETipo tipo; 
-        /// <summary>
-        /// Tipo se refiere a si es un Trabajdor de tipo Tiempo completo, medio tiempo o freelance
-        /// </summary>
-
+        
         public string Nombre
         { 
             get { return nombre; }
