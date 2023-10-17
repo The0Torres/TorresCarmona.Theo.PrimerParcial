@@ -1,6 +1,14 @@
 ﻿namespace Laburos
 {
     [Serializable]
+
+    /// <summary>
+    /// La clase Periodista hereda de Trabajador y representa a un profesional dedicado al ámbito periodístico.
+    /// Contiene propiedades para la credibilidad, el medio de trabajo y la especialización del periodista.
+    /// Proporciona constructores para inicializar estos valores y métodos para operaciones específicas.
+    /// También incluye métodos para comparar y mostrar información detallada del periodista.
+    /// </summary>
+   
     public class Periodista : Trabajador
     {
         protected double credibilidad;

@@ -2,6 +2,14 @@
 {
 
     [Serializable]
+
+    /// <summary>
+    /// La clase Cirujano hereda de Trabajador y representa a un trabajador del ámbito médico.
+    /// Contiene propiedades para el número de cirugías realizadas, especialidad y hospital de trabajo.
+    /// Proporciona constructores para inicializar estos valores y métodos para operaciones específicas.
+    /// Incluye métodos para comparar y mostrar información detallada del cirujano.
+    /// </summary>
+    
     public class Cirujano:Trabajador
     {
         protected double cirugias;
@@ -25,9 +33,11 @@
             get { return especialidad; }
             set { especialidad = value; }
         }
-        public Cirujano()
+        public Cirujano() : base()
         {
-
+            this.Cirugias = 0;
+            this.especialidad = "N/N";
+            this.hospital = EHospitales.Italiano;
         }
 
         public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo, string Especialidad)

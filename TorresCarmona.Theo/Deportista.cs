@@ -1,6 +1,12 @@
 ﻿namespace Laburos
 {
     [Serializable]
+    /// <summary>
+    /// La clase Deportista hereda de Trabajador y representa a un trabajador dedicado al ámbito deportivo.
+    /// Contiene propiedades para el deporte practicado, el número de trofeos y el ranking mundial.
+    /// Proporciona constructores para inicializar estos valores y métodos para operaciones específicas.
+    /// También incluye métodos para comparar y mostrar información detallada del deportista.
+    /// </summary>
     public class Deportista:Trabajador
     {
         protected string deporte;
