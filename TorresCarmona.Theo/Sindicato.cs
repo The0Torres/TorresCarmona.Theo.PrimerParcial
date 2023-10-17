@@ -1,5 +1,6 @@
 ﻿namespace Laburos
 {
+    
     public class Sindicato
     {
         private List<Trabajador> trabajadores;

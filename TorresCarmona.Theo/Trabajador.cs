@@ -1,5 +1,12 @@
-﻿namespace Laburos
+﻿using System.Xml.Serialization;
+
+namespace Laburos
 {
+    [Serializable]
+    [XmlInclude(typeof(Cirujano))]
+    [XmlInclude(typeof(Deportista))]
+    [XmlInclude(typeof(Periodista))]
+
     public abstract class Trabajador
     {
         protected string nombre;
@@ -29,6 +36,11 @@
         { 
             get { return tipo; }
             set { tipo = value; }
+        }
+
+        public Trabajador()
+        {
+
         }
 
         public Trabajador(string Nombre, string Apellido)

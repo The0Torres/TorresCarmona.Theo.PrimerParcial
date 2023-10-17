@@ -122,6 +122,8 @@
             Controls.Add(lstSindicato);
             Name = "FrmSindicato";
             Text = "Sindicato";
+            FormClosing += FrmSindicato_FormClosing;
+            Load += FrmSindicato_Load;
             ResumeLayout(false);
             PerformLayout();
         }

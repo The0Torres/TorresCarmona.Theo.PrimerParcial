@@ -1,5 +1,6 @@
 ﻿namespace Laburos
 {
+    [Serializable]
     public class Deportista:Trabajador
     {
         protected string deporte;
@@ -22,6 +23,11 @@
         { 
             get { return deporte; }
             set { deporte = value; }
+        }
+
+        public Deportista()
+        {
+
         }
 
         public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte) 

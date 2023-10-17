@@ -1,5 +1,7 @@
 ﻿namespace Laburos
 {
+
+    [Serializable]
     public class Cirujano:Trabajador
     {
         protected int cirugias;
@@ -23,7 +25,10 @@
             get { return especialidad; }
             set { especialidad = value; }
         }
+        public Cirujano()
+        {
 
+        }
 
         public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo, string Especialidad)
             : base(Nombre, Apellido, Salario, Tipo)

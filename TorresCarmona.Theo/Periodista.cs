@@ -1,5 +1,6 @@
 ﻿namespace Laburos
 {
+    [Serializable]
     public class Periodista : Trabajador
     {
         protected double credibilidad;
@@ -22,6 +23,10 @@
         { 
             get { return especializacion; }
             set { especializacion = value;}
+        }
+        public Periodista()
+        {
+
         }
 
         public Periodista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Especializacion) 

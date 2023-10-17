@@ -1,5 +1,8 @@
 using Laburos;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Xml;
+using System.Text;
 
 namespace FrmPrincipal
 {
@@ -18,6 +21,8 @@ namespace FrmPrincipal
         {
             InitializeComponent();
             Sindicato = new Sindicato();
+            this.Load += FrmSindicato_Load;
+            this.FormClosing += FrmSindicato_FormClosing;
         }
 
         public FrmSindicato(Usuario usuario) : this()
@@ -124,6 +129,28 @@ namespace FrmPrincipal
             if (resultado == DialogResult.OK)
             {
                 this.ActualizarVisor();
+            }
+        }
+
+        private void FrmSindicato_Load(object sender, EventArgs e)
+        {
+            if (File.Exists("./datos.xml"))
+            {
+                using (XmlTextReader lectorXml = new XmlTextReader("./datos.xml"))
+                {
+                    XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
+                    this.sindicato = (Sindicato)serializador.Deserialize(lectorXml);
+                }
+                this.ActualizarVisor();
+            }
+        }
+
+        private void FrmSindicato_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (XmlTextWriter escritorXml = new XmlTextWriter("./datos.xml", Encoding.UTF8))
+            {
+                XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
+                serializador.Serialize(escritorXml, this.sindicato);
             }
         }
     }
