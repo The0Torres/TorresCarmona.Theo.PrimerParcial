@@ -16,8 +16,8 @@ namespace FrmPrincipal
     public partial class FrmPeriodista : FrmTrabajador
     {
 
-        public string especializacion;
-        public EMedios medio;
+        protected string especializacion;
+        protected EMedios medio;
 
         private Periodista periodista;
 
@@ -55,9 +55,9 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!double.TryParse(this.txtCredibilidad.Text, out double credibilidad))
+            if (!double.TryParse(this.txtCredibilidad.Text, out double credibilidad) || credibilidad <= 0 || credibilidad > 100)
             {
-                MessageBox.Show("Ingrese un porcentaje de credibilidad.",
+                MessageBox.Show("Ingrese un porcentaje de credibilidad valido.",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);

@@ -63,7 +63,7 @@ namespace Laburos
 
         protected abstract void RealizarTarea();
 
-        public virtual string MostrarDatos()
+        protected virtual string MostrarDatos()
         {
             return $"{Nombre} {Apellido} - {Tipo} - {Salario}$";
         }

@@ -52,7 +52,7 @@
             Console.WriteLine("Informandose de la actualidad");
         }
 
-        public override string MostrarDatos()
+        protected override string MostrarDatos()
         {
             return base.MostrarDatos() + $" - Periodista {Especializacion} - Medio: {Medio} - Credibilidad: {Credibilidad}%";
         }

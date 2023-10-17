@@ -4,11 +4,11 @@
     [Serializable]
     public class Cirujano:Trabajador
     {
-        protected int cirugias;
+        protected double cirugias;
         protected string especialidad;
         protected EHospitales hospital;
 
-        public int Cirugias
+        public double Cirugias
         { 
             get { return cirugias; } 
             set { cirugias = value; }
@@ -42,7 +42,7 @@
             this.hospital = Hospital;
         }
 
-        public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo ,string Especialidad, EHospitales Hospital, int Cirugias)
+        public Cirujano(string Nombre, string Apellido, double Salario,ETipo Tipo ,string Especialidad, EHospitales Hospital, double Cirugias)
             : this(Nombre, Apellido, Salario, Tipo, Especialidad, Hospital)
         {
             this.cirugias = Cirugias;
@@ -53,7 +53,7 @@
             Console.WriteLine("Realizando cirugia a un paciente");
         }
 
-        public override string MostrarDatos()
+        protected override string MostrarDatos()
         {
             return base.MostrarDatos() + $" - Cirujano {Especialidad} - Cirugías realizadas: {Cirugias} - Hospital {Hospital}";
         }

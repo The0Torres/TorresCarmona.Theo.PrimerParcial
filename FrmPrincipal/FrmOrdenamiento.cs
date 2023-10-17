@@ -69,15 +69,18 @@ namespace FrmPrincipal
                     Sindicato.OrdenarPorNombreDescendente();
                 }
             }
-            else
+            if (!rbtnAscendente.Checked && !rbtnDescendente.Checked)
             {
-                MessageBox.Show("Por favor seleccione una atributo y el orden",
+                MessageBox.Show("Por favor seleccione el orden",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning
                                         );
             }
-            this.DialogResult = DialogResult.OK;
+            else
+            {
+                this.DialogResult = DialogResult.OK; 
+            }
         }
     }
 }

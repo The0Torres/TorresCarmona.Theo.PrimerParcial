@@ -44,7 +44,7 @@ namespace FrmPrincipal
                 MessageBox.Show("Por favor, complete todos los campos.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (!double.TryParse(this.txtSalario.Text, out double salario))
+            if (!double.TryParse(this.txtSalario.Text, out double salario) || salario <= 0)
             {
                 MessageBox.Show("Ingrese un salario valido.",
                                         "Advertencia",

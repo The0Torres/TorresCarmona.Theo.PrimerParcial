@@ -49,16 +49,16 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!int.TryParse(this.txtTrofeos.Text, out int trofeos))
+            if (!double.TryParse(this.txtTrofeos.Text, out double trofeos) || trofeos < 0)
             {
-                MessageBox.Show("Ingrese una cantidad de trofeos.",
+                MessageBox.Show("Ingrese una cantidad de trofeos valida.",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!int.TryParse(this.txtRanking.Text, out int ranking))
+            if (!int.TryParse(this.txtRanking.Text, out int ranking) || ranking <= 0)
             {
                 MessageBox.Show("Ingrese un ranking mundial.",
                                         "Advertencia",

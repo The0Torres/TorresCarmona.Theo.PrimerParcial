@@ -4,16 +4,16 @@
     public class Deportista:Trabajador
     {
         protected string deporte;
-        protected int trofeos;
-        protected int rankingMundial;
+        protected double trofeos;
+        protected double rankingMundial;
 
-        public int RankingMundial
+        public double RankingMundial
         { 
             get { return rankingMundial; }
             set { rankingMundial = value; }
         }
 
-        public int Trofeos
+        public double Trofeos
         {
             get { return trofeos; }
             set { trofeos = value;}
@@ -36,13 +36,13 @@
             this.deporte = Deporte;
         }
 
-        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, int Trofeos) 
+        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, double Trofeos) 
             : this(Nombre, Apellido, Salario, Tipo, Deporte)
         {
             this.trofeos = Trofeos;
         }
 
-        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, int Trofeos, int RankingMundial) 
+        public Deportista(string Nombre, string Apellido, double Salario, ETipo Tipo, string Deporte, double Trofeos, double RankingMundial) 
             : this(Nombre, Apellido, Salario, Tipo, Deporte,Trofeos)
         {
             this.rankingMundial = RankingMundial;
@@ -53,7 +53,7 @@
             Console.WriteLine("Entrenando para la competicion");
         }
 
-        public override string MostrarDatos()
+        protected override string MostrarDatos()
         {
             return base.MostrarDatos() + $" - Deporte: {Deporte} - Trofeos: {Trofeos} - Ranking deportistas: {RankingMundial}";
         }

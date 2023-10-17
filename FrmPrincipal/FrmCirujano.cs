@@ -53,9 +53,9 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!int.TryParse(this.txtCirugias.Text, out int cirugias))
+            if (!double.TryParse(this.txtCirugias.Text, out double cirugias) || cirugias < 0)
             {
-                MessageBox.Show("Ingrese las cirugias hechas.",
+                MessageBox.Show("Ingrese las cirugias hechas de forma correcta.",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
