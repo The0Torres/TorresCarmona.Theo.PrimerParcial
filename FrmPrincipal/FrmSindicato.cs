@@ -162,7 +162,7 @@ namespace FrmPrincipal
                 DialogResult result = MessageBox.Show("¿Está seguro de cerrar la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
-                {                  
+                {
                     Application.Exit();
                 }
                 else

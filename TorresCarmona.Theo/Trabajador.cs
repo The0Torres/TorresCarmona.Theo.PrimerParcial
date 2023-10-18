@@ -4,7 +4,7 @@ namespace Laburos
 {
     [Serializable]
     [XmlInclude(typeof(Cirujano))]
-    [XmlInclude(typeof(Deportista))]
+    [XmlInclude(typeof(Trabajador))]
     [XmlInclude(typeof(Periodista))]
 
     /// <summary>
@@ -12,7 +12,7 @@ namespace Laburos
     /// Contiene propiedades para el nombre, apellido, salario y tipo de trabajador.
     /// La clase implementa la serialización XML
     /// Sobrecarga los métodos ToString y Equals para comparaciones de igualdad.
-    /// Es la base para diferentes tipos de trabajadores, como Cirujano,Deportista y Periodista, que heredan de esta clase.
+    /// Es la base para diferentes tipos de trabajadores, como Cirujano,Trabajador y Periodista, que heredan de esta clase.
     /// </summary>
 
     public abstract class Trabajador
@@ -81,6 +81,21 @@ namespace Laburos
         public override string ToString()
         {
             return MostrarDatos();
+        }
+
+        static public implicit operator double(Trabajador trabajador)
+        {
+            return trabajador.salario;
+        }
+
+        public static bool operator ==(Trabajador trabajador1, Trabajador trabajador2)
+        {
+            return trabajador1.Nombre == trabajador2.Nombre && trabajador1.Apellido == trabajador2.Apellido;
+        }
+
+        public static bool operator !=(Trabajador trabajador1, Trabajador trabajador2)
+        {
+            return !(trabajador1 == trabajador2);
         }
 
         public override bool Equals(object obj)
