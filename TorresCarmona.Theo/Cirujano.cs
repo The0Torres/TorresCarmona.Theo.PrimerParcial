@@ -82,13 +82,11 @@
 
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
+            if (obj is Cirujano otroCirujano)
             {
-                return false;
+                return base.Equals(obj) && this.Especialidad == otroCirujano.Especialidad;
             }
-
-            Cirujano otroCirujano = (Cirujano)obj;
-            return this.nombre == otroCirujano.Nombre && this.apellido == otroCirujano.Apellido;
+            return false;
         }
     }
 }

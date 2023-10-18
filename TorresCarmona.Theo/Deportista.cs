@@ -81,13 +81,11 @@
 
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
+            if (obj is Deportista otroDeportista)
             {
-                return false;
+                return base.Equals(obj) && this.Deporte == otroDeportista.Deporte;
             }
-
-            Deportista otroDeportista = (Deportista)obj;
-            return this.Nombre == otroDeportista.Nombre && this.Apellido == otroDeportista.Apellido;
+            return false;
         }
     }
 }

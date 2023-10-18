@@ -81,13 +81,11 @@
 
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
+            if (obj is Periodista otroPeriodista)
             {
-                return false;
+                return base.Equals(obj) && this.Medio == otroPeriodista.Medio;
             }
-
-            Periodista otroperiodista = (Periodista)obj;
-            return this.Nombre == otroperiodista.Nombre && this.Apellido == otroperiodista.Apellido;
+            return false;
         }
 
     }
