@@ -4,7 +4,7 @@ namespace Laburos
 {
     [Serializable]
     [XmlInclude(typeof(Cirujano))]
-    [XmlInclude(typeof(Trabajador))]
+    [XmlInclude(typeof(Deportista))]
     [XmlInclude(typeof(Periodista))]
 
     /// <summary>
