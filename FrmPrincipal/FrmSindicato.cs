@@ -179,12 +179,19 @@ namespace FrmPrincipal
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                using (XmlTextReader lectorXml = new XmlTextReader(openFileDialog.FileName))
+                try
                 {
-                    XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
-                    this.sindicato = (Sindicato)serializador.Deserialize(lectorXml);
+                    using (XmlTextReader lectorXml = new XmlTextReader(openFileDialog.FileName))
+                    {
+                        XmlSerializer serializador = new XmlSerializer(typeof(Sindicato));
+                        this.sindicato = (Sindicato)serializador.Deserialize(lectorXml);
+                    }
+                    this.ActualizarVisor();
                 }
-                this.ActualizarVisor();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar el archivo XML: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
