@@ -12,6 +12,12 @@ using Microsoft.VisualBasic.Devices;
 
 namespace FrmPrincipal
 {
+    /// <summary>
+    /// Clase que representa el formulario para gestionar un trabajador de tipo Deportista.
+    /// Permite ingresar y modificar datos específicos de un Deportista, como el deporte practicado,
+    /// cantidad de trofeos y ranking mundial.
+    /// </summary>
+  
     public partial class FrmDeportista : FrmTrabajador
     {
         protected string deporte;

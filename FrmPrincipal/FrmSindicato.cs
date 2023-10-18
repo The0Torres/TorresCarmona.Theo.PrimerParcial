@@ -6,6 +6,13 @@ using System.Text;
 
 namespace FrmPrincipal
 {
+    /// <summary>
+    /// Clase que representa el formulario principal de la aplicación.
+    /// Permite gestionar una colección de trabajadores de diferentes clases y proporciona
+    /// funcionalidades como agregar, modificar, eliminar y ordenar trabajadores.
+    /// También ofrece la opción de cargar y guardar datos desde/hacia archivos XML.
+    /// </summary>
+    
     public partial class FrmSindicato : Form
     {
         DateTime fechaActual = DateTime.Now;

@@ -12,6 +12,12 @@ using Microsoft.VisualBasic.Devices;
 
 namespace FrmPrincipal
 {
+    /// <summary>
+    /// Clase que representa el formulario para gestionar un trabajador de tipo Cirujano.
+    /// Permite ingresar y modificar datos específicos de un Cirujano, como la especialidad médica,
+    /// cantidad de cirugías realizadas y el hospital en el que trabaja.
+    /// </summary>
+    
     public partial class FrmCirujano : FrmTrabajador
     {
 

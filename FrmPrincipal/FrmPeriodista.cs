@@ -13,6 +13,12 @@ using Laburos;
 
 namespace FrmPrincipal
 {
+    /// <summary>
+    /// Clase que representa el formulario para gestionar un trabajador de tipo Periodista.
+    /// Permite ingresar y modificar datos específicos de un Periodista, como la especialización,
+    /// nivel de credibilidad y el medio de comunicación en el que trabaja.
+    /// </summary>
+   
     public partial class FrmPeriodista : FrmTrabajador
     {
 

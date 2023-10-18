@@ -12,6 +12,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrmPrincipal
 {
+    /// <summary>
+    /// Clase base para los formularios que gestionan trabajadores.
+    /// Contiene métodos para validar datos comunes.
+    /// </summary>
+
     public partial class FrmTrabajador : Form
     {
         protected string nombre;
