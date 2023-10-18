@@ -55,7 +55,7 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!double.TryParse(this.txtCredibilidad.Text, out double credibilidad) || credibilidad <= 0 || credibilidad > 100)
+            if (!double.TryParse(this.txtCredibilidad.Text, out double credibilidad) || credibilidad < 0 || credibilidad > 100)
             {
                 MessageBox.Show("Ingrese un porcentaje de credibilidad valido.",
                                         "Advertencia",

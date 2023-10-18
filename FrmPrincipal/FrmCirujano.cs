@@ -53,7 +53,7 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!double.TryParse(this.txtCirugias.Text, out double cirugias) || cirugias < 0)
+            if (!double.TryParse(this.txtCirugias.Text, out double cirugias) || cirugias < 0 || this.txtCirugias.Text.Contains("."))
             {
                 MessageBox.Show("Ingrese las cirugias hechas de forma correcta.",
                                         "Advertencia",

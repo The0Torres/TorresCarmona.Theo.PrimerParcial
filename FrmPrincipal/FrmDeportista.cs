@@ -49,7 +49,7 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!double.TryParse(this.txtTrofeos.Text, out double trofeos) || trofeos < 0)
+            if (!double.TryParse(this.txtTrofeos.Text, out double trofeos) || trofeos < 0 || this.txtTrofeos.Text.Contains("."))
             {
                 MessageBox.Show("Ingrese una cantidad de trofeos valida.",
                                         "Advertencia",
@@ -58,7 +58,7 @@ namespace FrmPrincipal
                 return;
             }
 
-            if (!int.TryParse(this.txtRanking.Text, out int ranking) || ranking <= 0)
+            if (!int.TryParse(this.txtRanking.Text, out int ranking) || ranking <= 0 || this.txtRanking.Text.Contains("."))
             {
                 MessageBox.Show("Ingrese un ranking mundial.",
                                         "Advertencia",
