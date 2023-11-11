@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\theo\\PrimerParcial\\FrmPrincipal\\FrmPrincipal.csproj": {}
+    "C:\\Users\\theo\\SegundoParcial\\FrmPrincipal\\FrmPrincipal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\theo\\PrimerParcial\\FrmPrincipal\\FrmPrincipal.csproj": {
+    "C:\\Users\\theo\\SegundoParcial\\FrmPrincipal\\FrmPrincipal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theo\\PrimerParcial\\FrmPrincipal\\FrmPrincipal.csproj",
+        "projectUniqueName": "C:\\Users\\theo\\SegundoParcial\\FrmPrincipal\\FrmPrincipal.csproj",
         "projectName": "FrmPrincipal",
-        "projectPath": "C:\\Users\\theo\\PrimerParcial\\FrmPrincipal\\FrmPrincipal.csproj",
+        "projectPath": "C:\\Users\\theo\\SegundoParcial\\FrmPrincipal\\FrmPrincipal.csproj",
         "packagesPath": "C:\\Users\\theo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theo\\PrimerParcial\\FrmPrincipal\\obj\\",
+        "outputPath": "C:\\Users\\theo\\SegundoParcial\\FrmPrincipal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj": {
-                "projectPath": "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj"
+              "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj": {
+                "projectPath": "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj": {
+    "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj",
+        "projectUniqueName": "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj",
         "projectName": "TorresCarmona.Theo",
-        "projectPath": "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj",
+        "projectPath": "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\TorresCarmona.Theo.csproj",
         "packagesPath": "C:\\Users\\theo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theo\\PrimerParcial\\TorresCarmona.Theo\\obj\\",
+        "outputPath": "C:\\Users\\theo\\SegundoParcial\\TorresCarmona.Theo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theo\\AppData\\Roaming\\NuGet\\NuGet.Config",
